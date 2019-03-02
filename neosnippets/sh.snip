@@ -1,9 +1,10 @@
 snippet #!
-abbr    #!/bin/sh
+abbr    #!/bin/bash
 alias   shebang
-options head
-	#!/bin/${1:sh}
-	${0}
+
+snippet modeline
+abbr modeline
+	# vim: `':set '. (&expandtab ? printf('et sw=%i ts=%i', &sw, &ts) : printf('noet sts=%i sw=%i ts=%i', &sts, &sw, &ts)) . (&tw ? ' tw='. &tw : '') . ':'`
 
 
 snippet if
@@ -59,8 +60,7 @@ snippet tmp
 
 snippet function
 alias func
-	${1:#:name}()
-	{
+	${1:#:name}() {
 		${0:TARGET}
 	}
 
